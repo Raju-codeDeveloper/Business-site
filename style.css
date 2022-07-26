@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0%;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    /* height: 50vh;
+    width: 50vw; the image is only showed upto 50% of screen*/
+    /* if we dont use VIEWPORT it will place the image upto onlythe height of the content */
+    background: linear-gradient(to top, rgba(216, 206, 194, 0.4),rgba(0,0,0,0.3)), url(a.jpg);
+     /* linear gradient is used to grade the transprency for bg image //1st block for bottom and 2nd is for top, (0.9=>refers to 90% image blur )*/
+    /* to top means the gradient apply from bottom to top */
+     background-size: cover;
+     /* cover makes the image to fot for entire width ofthe division or block in which were placcing it */
+    /* background-size: contain; */
+    /* it will set the image to the container based on its size, by repeating the images untill we use No repeat  */
+     /* background-repeat: no-repeat; */
+
+     background-position:center;
+}
+/* #Nav{
+    background-color: gray;
+    opacity: 0.1;
+} */
+/* class navbar is in the container class, so it takes 90%width of the containern tag */
+.navbar{
+    width: 90%;
+    margin:auto;
+    padding: auto;
+    /* 85% width allocate 85% screen width to navbar--and auto margin makes the space equal at both ends */
+    padding: 30px 0;
+    /* whenever we hgive two values for padding, margin , or (any thing which takes 4 values,)first value is for top and bottom and 2nd is for left and right */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+     
+    /* it gives space for logo and ul */
+    position: relative;
+}
+.logo{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+.navbar ul li{
+    list-style: none;
+    /* display:inline-block; */
+    float: left;
+    /* we can use both float and inline block to arnage them in a row */
+   /* it makes all the elments appeaer in same line */
+    margin: 0 20px;
+    /* 0 refers to margin top and bottom, and 20 for left and right*/
+    position: relative;
+    
+}
+/* to remove underlines for anchor texts */
+.navbar ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+/* were applying some animations here for list items after applying the previous styles*/
+/* the reason to use after is to adjust the position for the list items , so after setting the position to relative.. we can apply position as absolute */
+.navbar ul li ::after{
+    content:'';
+    
+    height:14%;
+    /* height for animation */
+    width: 0;
+    /* width for animation is 0, bqz it will be taken by default */
+    background-color: rgb(220, 48, 77);
+    position:absolute;
+    left:0;
+    /* z-index:-1; */
+    /* border-radius: 10px; */
+    /* as we know that before for absolute position it should have its parent element position relative */
+    bottom:-10px;
+    transition: 0.6s;
+
+}
+.navbar ul li :hover::after{
+    width:100%;
+    
+   
+}
+.content{
+    width: 100%;
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    /* it will align the content to the center of webpage */
+    transform: translateY(-50%);
+    text-align: center;
+
+}
+.content h1{
+    font-size: 60px;
+    margin: 20px;
+}
+.content p{
+    margin: 10px auto;
+    line-height: 25px;
+}
+button{
+    margin: 20px;
+    width: 120px;
+    padding: 10px 0 ;
+    text-align: center;
+    border-radius: 10px;
+    background: transparent;
+    /* it makes the buton transparent */
+    color:antiquewhite;
+    font-size: 20px;
+    border: 2px solid burlywood;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    /* it hides the extra content in the button */
+}
+/* span{
+    position: absolute;
+    left:0;
+    top:0;
+    background-color:burlywood;
+    width:0;
+    height: 100%;
+    border-radius: 10px;
+    z-index: -1;
+    z index makes to appear text over bg color
+    transition: 0.5s;
+    if i remove the transistion then the bg color will be appeared as bg for text
+
+
+ } */
+/* button:hover span{
+    width:100%;
+   
+
+
+}  */
+button:hover{
+    border:none;
+    font-weight: bolder;
+    color: aliceblue;
+    background-color: burlywood;
+    transition: 0.5s;
+}
+.footer{
+    padding: 5% 10%;
+    text-transform: capitalize;
+    background-color:ghostwhite;
+    /* margin: auto; */
+    display: flex;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+
+}
+.box{
+ justify-content: space-between;
+ width: 100%;
+}
+.box a{
+    display: block;
+    /* we can use both flex and block items */
+    /* display: flex; */
+    /* align-items: column; */
+}
